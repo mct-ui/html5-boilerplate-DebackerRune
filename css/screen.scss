@@ -119,8 +119,8 @@ $ms9: calc($ms8 * $ratio); // 52px
 $ms10: calc($ms9 * $ratio); // 58px
 $ms11: calc($ms10 * $ratio); // 66px
 
-$font-family-primary: "Helvetica Neue", Helvetica, arial, sans-serif;
-$font-family-secondary: "Times New Roman", Times, serif;
+$font-family-primary: 'Helvetica Neue', Helvetica, arial, sans-serif;
+$font-family-secondary: 'Times New Roman', Times, serif;
 
 // ---
 // Settings: Spacing
@@ -158,16 +158,18 @@ $breakpoints: (
 *,
 *:before,
 *:after {
-  // Reset box-sizing
+  box-sizing: border-box;
 }
 
 * {
-  // Reset margin and font-size and font-weight
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
 }
 
 img {
-  // make images block level elements
-  // make images responsive
+  display: block;
+  max-width: 100%;
 }
 
 /*---------------------------------------/*
@@ -181,6 +183,11 @@ img {
 */
 
 html {
+  font-size: calc($root-font-size / 16 * 100%);
+  line-height: 1.5;
+  font-family: $font-family-primary;
+  color: $color-text;
+  scroll-behavior: smooth;
 }
 
 /*
@@ -188,6 +195,8 @@ html {
 */
 
 ::selection {
+  background: $color-primary-lighter;
+  color: white;
 }
 
 /*
@@ -197,17 +206,33 @@ html {
 */
 
 h1 {
+  font-size: $ms5;
+  font-size: 700;
+  line-height: calc($baseline * 4);
+  margin-bottom: $space-m;
 }
 
 h2 {
+  font-size: $ms1;
+  font-size: 700;
+  line-height: calc($baseline * 3);
+  margin-bottom: $space-m;
 }
 
 h3 {
+  font-size: $ms1;
+  font-size: 700;
+  line-height: calc($baseline * 3);
+  margin-bottom: $space-m;
 }
 
 h4,
 h5,
 h6 {
+  font-size: $ms0;
+  font-size: 700;
+  line-height: calc($baseline * 3);
+  margin-bottom: $space-m;
 }
 
 p,
@@ -217,23 +242,40 @@ dl,
 table,
 address,
 figure {
+  margin-bottom: $space-m;
 }
 
 ul,
 ol {
+  padding: 0;
+  list-style-position: inside;
 }
 
 li ul,
 li ol {
+  margin-bottom: 0;
 }
 
 blockquote {
+  font-family: $font-family-secondary;
+  font-style: italic;
+  font-size: $ms3;
+  line-height: calc($baseline * 4);
+  margin-bottom: $space-m;
 }
 
 figcaption {
+  font-size: $ms-1;
+  line-height: calc($baseline * 2);
+  margin-top: $space-xs;
+  color: $color-text-lighter;
 }
 
 hr {
+  border: 0;
+  height: 1px;
+  background: $color-border;
+  margin-bottom: $space-m;
 }
 
 a {
